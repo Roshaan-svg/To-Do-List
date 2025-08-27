@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg , #153677 ,#4e085f);
+    padding: 10px;
+}
+
+.todo-app{
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 80px auto 20px;
+    padding: 30px 25px 50px;
+    border-radius: 20px;
+}
+
+.todo-app h2{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: center;
+    justify-content: center;
+}
+
+.todo-app h2 img{
+    width: 28px;
+    margin-left: 10px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px; 
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 15px;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 12px 25px;
+    background: #ff5945;
+    color: #fff;
+    border-radius: 40px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #e24a38;
+}
+
+ul li{
+    list-style: none;
+    font-size: 16px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    word-wrap: break-word;
+}
+
+ul li::before{
+    content: '';
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    position: absolute;
+    background-image: url(./To-Do-Img/images/unchecked.png);
+    background-position: center;
+    background-size: cover;
+    top: 12px;
+    left: 10px;
+}
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+    background-image: url(./To-Do-Img/images/checked.png);
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    color: #555;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover{
+    background: #edeef0;
+}
+
+/* ✅ Responsive Breakpoints */
+@media (max-width: 768px) {
+    .todo-app {
+        margin: 50px auto 20px;
+        padding: 25px 20px 40px;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    input {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    ul li {
+        font-size: 14px;
+        padding: 10px 8px 10px 45px;
+    }
+
+    ul li::before {
+        width: 20px;
+        height: 20px;
+        top: 10px;
+        left: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .todo-app h2 {
+        font-size: 18px;
+    }
+
+    input {
+        font-size: 13px;
+    }
+
+    button {
+        font-size: 13px;
+    }
+
+    ul li {
+        font-size: 13px;
+    }
+}
